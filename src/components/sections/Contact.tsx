@@ -40,7 +40,8 @@ export default function Contact() {
                   </h4>
 
                   <p className="mt-2 text-gray-600 leading-7">
-                    Village Sarsara Khas, Near barsethi railway station, District Jaunpur, Uttar Pradesh, India
+                    खाटू श्याम मंदिर, सरसरा वाराणसी मंडल उत्तर प्रदेश बरसठी
+                    रेलवे स्टेशन के समीप
                   </p>
                 </div>
               </div>
@@ -53,7 +54,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-xl text-[#4A1F1F]">Phone</h4>
 
-                  <p className="mt-2 text-gray-600">+91 9876543210</p>
+                  <p className="mt-2 text-gray-600">+91 7307348212, 9831042999</p>
                 </div>
               </div>
 
@@ -65,7 +66,7 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-xl text-[#4A1F1F]">Email</h4>
 
-                  <p className="mt-2 text-gray-600">templetrust@email.com</p>
+                  <p className="mt-2 text-gray-600">sshyamkmdtrust@gmail.com</p>
                 </div>
               </div>
 

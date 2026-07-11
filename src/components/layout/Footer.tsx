@@ -6,6 +6,7 @@ const links = [
   { title: "Journey", href: "#journey" },
   { title: "Gallery", href: "#gallery" },
   { title: "Contact", href: "#contact" },
+  { title: "Donate Now", href: "#donate" },
 ];
 
 export default function Footer() {
@@ -94,13 +95,13 @@ export default function Footer() {
                 />
 
                 <p className="leading-7 text-gray-300">
-                  Temple Of Shiva,
+                  खाटू श्याम मंदिर,
                   <br />
-                  Sarokhan,
+                 सरसरा वाराणसी मंडल बरसठी
+                    रेलवे स्टेशन के समीप
                   <br />
-                  Jaunpur,
-                  Uttar Pradesh,
-                  India
+                  जौनपुर,
+                  उत्तर प्रदेश
                 </p>
 
               </div>
@@ -113,7 +114,7 @@ export default function Footer() {
                 />
 
                 <p className="text-gray-300">
-                  +91 XXXXX XXXXX
+                  +91 7307348212, 9831042999
                 </p>
 
               </div>
@@ -126,7 +127,7 @@ export default function Footer() {
                 />
 
                 <p className="text-gray-300 break-all">
-                  templetrust@gmail.com
+                  sshyamkmdtrust@gmail.com
                 </p>
 
               </div>

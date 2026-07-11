@@ -31,105 +31,69 @@ export default function MissionSection() {
 
           {/* LEFT CARD */}
 
-          <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .8 }}
-            className="overflow-hidden rounded-3xl shadow-xl"
-          >
+{/* LEFT CARD */}
 
-            <div className="grid grid-cols-1 md:grid-cols-2">
-
-              {/* Content */}
-
-              <div className="bg-[#4A1614] text-white p-6 sm:p-8 lg:p-10">
-
-                <h2 className="text-3xl font-bold">
-                  Why Khatu Shyam Ji?
-                </h2>
-
-                <div className="mt-8 space-y-5">
-
-                  {whyPoints.map((item, index) => (
-
-                    <div
-                      key={index}
-                      className="flex gap-4"
-                    >
-
-                      <BadgeCheck
-                        size={20}
-                        className="text-amber-400 mt-1 shrink-0"
-                      />
-
-                      <p className="text-gray-200 leading-7">
-                        {item}
-                      </p>
-
-                    </div>
-
-                  ))}
-
-                </div>
-
-                <button
-                  className="
-                  mt-10
-                  flex
-                  items-center
-                  gap-2
-                  rounded-xl
-                  bg-amber-500
-                  px-6
-                  py-3
-                  font-semibold
-                  transition
-                  hover:bg-amber-600
-                  "
-                >
-
-                  Read More
-
-                  <ArrowRight size={18} />
-
-                </button>
-
-              </div>
-
-              {/* Image */}
-
-              <div
-  className="
-    relative
-    h-60
-    sm:h-72
-    md:min-h-[350px]
-  "
+<motion.div
+  initial={{ opacity: 0, x: -60 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="relative overflow-hidden rounded-3xl shadow-xl h-[650px]"
 >
+  {/* Background Image */}
+  <img
+    src="/images/corridor.jpeg"
+    alt="About Khatu Shyam Temple"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
 
-                <img
-                  src="/images/corridor.jpeg"
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
 
-               <div
-  className="
-    absolute
-    inset-0
-    bg-gradient-to-t
-    md:bg-gradient-to-r
-    from-[#4A1614]/70
-    to-transparent
-  "
-></div>
+  {/* Content */}
+  <div className="relative z-10 flex flex-col justify-center h-full p-8 sm:p-10 lg:p-14 text-white">
+    <h2 className="text-3xl sm:text-4xl font-bold">
+      Why Khatu Shyam Ji?
+    </h2>
 
-              </div>
+    <div className="mt-8 space-y-5 max-w-xl">
+      {whyPoints.map((item, index) => (
+        <div key={index} className="flex gap-4">
+          <BadgeCheck
+            size={22}
+            className="text-amber-400 mt-1 shrink-0"
+          />
 
-            </div>
+          <p className="leading-7 text-gray-100">
+            {item}
+          </p>
+        </div>
+      ))}
+    </div>
 
-          </motion.div>
+    <button
+      className="
+        mt-10
+        w-fit
+        flex
+        items-center
+        gap-2
+        rounded-xl
+        bg-amber-500
+        px-6
+        py-3
+        font-semibold
+        transition-all
+        duration-300
+        hover:bg-amber-600
+        hover:gap-3
+      "
+    >
+      Read More
+      <ArrowRight size={18} />
+    </button>
+  </div>
+</motion.div>
 
           {/* RIGHT CARD */}
 

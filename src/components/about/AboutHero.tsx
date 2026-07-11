@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function AboutHero() {
   return (
@@ -14,15 +15,17 @@ export default function AboutHero() {
 
       {/* Overlay */}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/40" />
+      <div className="absolute inset-0  bg-gradient-to-r from-black/75 via-black/55 to-black/40" />
 
       {/* Breadcrumb */}
 
       <div className="absolute top-5 right-5 md:top-8 md:right-12 flex items-center gap-2 text-xs sm:text-sm text-white">
-        <span className="hover:text-amber-300 transition cursor-pointer">
-          Home
-        </span>
-
+<Link
+  to="/#home"
+  className="w-full inline-flex cursor-pointer hover:text-amber-300 transition"
+>
+  Home
+</Link>
         <ChevronRight size={18} />
 
         <span className="text-amber-300">About</span>
@@ -93,7 +96,8 @@ md:text-xl
 leading-7
 md:leading-8
 text-gray-200
-">
+"
+          >
             A divine initiative dedicated to preserving Sanatan Dharma,
             spreading devotion, and creating a sacred place where every devotee
             experiences peace, faith, and the blessings of Shri Khatu Shyam Ji.
@@ -108,8 +112,8 @@ text-gray-200
             <span className="w-10 sm:w-16 md:w-24 h-[2px] bg-amber-400"></span>
 
             <span className="mx-3 sm:mx-4 text-amber-400 text-xl sm:text-2xl">
-  ❀
-</span>
+              ❀
+            </span>
 
             <span className="w-10 sm:w-16 md:w-24 h-[2px] bg-amber-400"></span>
           </motion.div>

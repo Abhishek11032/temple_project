@@ -8,6 +8,7 @@ import Contact from "../components/sections/Contact";
 import GalleryPreview from "../components/sections/GalleryPreview";
 import Hero from "../components/sections/Hero";
 import Updates from "../components/sections/Updates";
+import Donate from "../components/sections/Donate"
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <GalleryPreview />
         <Updates />
         <Contact />
+        <Donate />
         <BackToTop />
         <WhatsAppButton />
       </main>

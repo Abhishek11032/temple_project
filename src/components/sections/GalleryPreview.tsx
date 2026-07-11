@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const images = [
   "/images/bhumi-puja.jpeg",
-  "/images/left-side.jpeg",
+  "/images/temple.jpeg",
   "/images/Temple.png",
   "/images/bhumi-puja.jpeg",
   "/images/left-side.jpeg",
