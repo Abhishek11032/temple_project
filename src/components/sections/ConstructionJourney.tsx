@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Flower2, Hammer, Building2 } from "lucide-react";
+import { Flower2 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const journey = [

@@ -1,5 +1,5 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import {  ChevronRight } from "lucide-react";
 import { galleryData } from "../data/Gallerydata";
 
 export default function Gallery() {
