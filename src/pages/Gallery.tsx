@@ -1,10 +1,10 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link,  useParams } from "react-router-dom";
 import {  ChevronRight } from "lucide-react";
 import { galleryData } from "../data/Gallerydata";
 
 export default function Gallery() {
   const { event } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const images = event
     ? (galleryData[event as keyof typeof galleryData] ?? [])
