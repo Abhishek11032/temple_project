@@ -98,7 +98,7 @@ export default function Gallery() {
                   {item.title}
                 </h3>
 
-                <p className="mt-2 text-gray-600">{item.guest}</p>
+                {/* <p className="mt-2 text-gray-600">{item.guest}</p> */}
               </div>
             </div>
           ))}

@@ -4,10 +4,6 @@ import {
   Flower2,
   UtensilsCrossed,
   HeartHandshake,
-  Building2,
-  University,
-  CreditCard,
-  QrCode,
 } from "lucide-react";
 export default function Donate() {
   return (
