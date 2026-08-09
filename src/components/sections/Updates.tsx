@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CalendarDays, Clock3, MapPin } from "lucide-react";
+import { CalendarDays, Clock3 } from "lucide-react";
 
 export default function Updates() {
   return (
