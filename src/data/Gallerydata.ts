@@ -9,7 +9,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img24.jpeg",
       title: "भूमि पूजन",
-      guest: "मुख्य अतिथि : श्री गिरीश चंद्र यादव जी",
+      guest: "मुख्य अतिथि : श्री गिरीश चंद्र यादव जी(उत्तर प्रदेश के राज्यमंत्री (स्वतंत्र प्रभार) )",
     },
     {
       image: "/images/img25.jpeg",
