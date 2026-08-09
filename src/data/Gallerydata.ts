@@ -1,4 +1,10 @@
-export const galleryData = {
+export type GalleryItem = {
+  image: string;
+  title: string;
+  guest?: string;
+};
+
+export const galleryData : Record<string, GalleryItem[]> = {
   "bhumi-pujan": [
     {
       image: "/images/img24.jpeg",

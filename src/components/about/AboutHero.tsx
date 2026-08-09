@@ -20,9 +20,9 @@ export default function AboutHero() {
       {/* Breadcrumb */}
 
       <div className="absolute top-5 right-5 md:top-8 md:right-12 flex items-center gap-2 text-xs sm:text-sm text-white">
-<Link
-  to="/#home"
-  className="w-full inline-flex cursor-pointer hover:text-amber-300 transition"
+        <Link
+  to="/?section=home"
+  className="inline-flex items-center px-2 py-1 transition-colors duration-300 hover:text-amber-300"
 >
   Home
 </Link>

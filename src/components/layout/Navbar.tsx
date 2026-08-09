@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", id: "home" },
@@ -14,12 +15,12 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-
-      // Navbar ki height ke liye offset
       const offset = 120;
 
       let currentSection = "home";
@@ -39,27 +40,51 @@ export default function Navbar() {
       setActiveSection(currentSection);
     };
 
-    // Initial check
     handleScroll();
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
     });
 
-    window.addEventListener("resize", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
     };
   }, []);
 
-  const handleNavClick = (id: string) => {
-    // Click ke time immediately active change
-    setActiveSection(id);
+  useEffect(() => {
+    const sectionId = searchParams.get("section");
 
-    // Mobile menu close
+    // agar section param nahi hai to Home active rakho
+    if (!sectionId) {
+      setActiveSection("home");
+      return;
+    }
+
+    const section = document.getElementById(sectionId);
+
+    if (!section) return;
+
+    setTimeout(() => {
+      const navbarHeight = 96;
+
+      const sectionPosition =
+        section.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: "smooth",
+      });
+    }, 100);
+  }, [searchParams]);
+  const handleNavClick = (id: string) => {
+    setActiveSection(id);
     setMenuOpen(false);
+
+    if (id === "home") {
+      navigate("/"); // URL clean
+    } else {
+      navigate(`/?section=${id}`);
+    }
 
     const section = document.getElementById(id);
 
@@ -67,9 +92,7 @@ export default function Navbar() {
       const navbarHeight = 96;
 
       const sectionPosition =
-        section.getBoundingClientRect().top +
-        window.scrollY -
-        navbarHeight;
+        section.getBoundingClientRect().top + window.scrollY - navbarHeight;
 
       window.scrollTo({
         top: sectionPosition,
@@ -77,14 +100,12 @@ export default function Navbar() {
       });
     }
   };
-
   return (
     <>
       {/* ================= NAVBAR ================= */}
 
       <header className="fixed top-0 left-0 z-50 w-full border-b border-amber-500 bg-gradient-to-r from-[#3B1610] via-[#5A2417] to-[#3B1610] shadow-xl">
         <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 lg:px-8">
-
           {/* ================= Logo ================= */}
 
           <button
@@ -127,7 +148,7 @@ export default function Navbar() {
               <p
                 className="
                   mt-2
-                  text-[10px]
+                  text-[7px]
                   md:text-xs
                   uppercase
                   tracking-[6px]
@@ -209,19 +230,13 @@ export default function Navbar() {
           shadow-2xl
           transition-transform
           duration-500
-          ${
-            menuOpen
-              ? "translate-x-0"
-              : "translate-x-full"
-          }
+          ${menuOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
         {/* Drawer Header */}
 
         <div className="flex h-20 items-center justify-between border-b border-white/10 px-6">
-          <h2 className="text-2xl font-bold text-amber-300">
-            Menu
-          </h2>
+          <h2 className="text-2xl font-bold text-amber-300">Menu</h2>
 
           <button
             className="text-white"

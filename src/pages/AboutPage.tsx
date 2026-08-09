@@ -2,6 +2,7 @@ import AboutHero from "../components/about/AboutHero";
 import MissionSection from "../components/about/MissionSection";
 import Vision from "../components/about/Vision";
 import WhyKhatuShyam from "../components/about/WhyKhatuShyam";
+import Footer from "../components/layout/Footer";
 
 export default function AboutPage() {
   return (
@@ -10,6 +11,7 @@ export default function AboutPage() {
        <Vision />
         <WhyKhatuShyam />
         <MissionSection />
+        <Footer />
     </>
   );
 }

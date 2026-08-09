@@ -1,6 +1,8 @@
 import { Link,  useParams } from "react-router-dom";
 import {  ChevronRight } from "lucide-react";
 import { galleryData } from "../data/Gallerydata";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
 export default function Gallery() {
   const { event } = useParams();
@@ -17,8 +19,10 @@ export default function Gallery() {
   };
 
   return (
-    <section className="min-h-screen bg-[#FFF8F2] py-10">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="min-h-screen bg-[#FFF8F2] pt-10">
+
+      <Navbar/>
+      <div className="mx-auto max-w-7xl px-6 py-10">
         {/* Back Button + Breadcrumb */}
 
         <div className="mb-10">
@@ -98,12 +102,13 @@ export default function Gallery() {
                   {item.title}
                 </h3>
 
-                {/* <p className="mt-2 text-gray-600">{item.guest}</p> */}
+                <p className="mt-2 text-gray-600">{item.guest}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <Footer/>
     </section>
   );
 }

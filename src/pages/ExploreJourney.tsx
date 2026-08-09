@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { MapPin, Landmark, Mountain, ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
 export default function ExploreJourney() {
   const navigate = useNavigate();
@@ -9,6 +11,7 @@ export default function ExploreJourney() {
     <div className="bg-[#FFFDF8] min-h-screen">
 
       {/* Hero Section */}
+      <Navbar/>
 
       <section
         className="relative h-[60vh] flex items-center justify-center"
@@ -173,7 +176,7 @@ export default function ExploreJourney() {
 
       {/* Back */}
 
-      <section className="py-16 text-center">
+      <section className="py-14 text-center">
 
         <button
           onClick={() => navigate("/")}
@@ -182,8 +185,8 @@ export default function ExploreJourney() {
           <ArrowLeft size={20} />
           Back to Home
         </button>
-
       </section>
+       <Footer />
 
     </div>
   );
