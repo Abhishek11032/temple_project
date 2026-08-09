@@ -4,7 +4,7 @@ import { CalendarDays, MapPin, Clock3 } from "lucide-react";
 const updates = [
   {
     title: "Bhumi Pujan Ceremony",
-    date: "15 June 2026",
+    date: "19 April 2026",
     time: "09:00 AM",
     location: "Temple Premises",
     description:
@@ -12,7 +12,7 @@ const updates = [
   },
   {
     title: "Shilanyas Ceremony",
-    date: "20 June 2026",
+    date: "01 November 2025",
     time: "10:30 AM",
     location: "Temple Premises",
     description:

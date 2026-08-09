@@ -6,9 +6,9 @@ const images = [
   "/images/bhumi-puja.jpeg",
   "/images/temple.jpeg",
   "/images/Temple.png",
-  "/images/bhumi-puja.jpeg",
-  "/images/left-side.jpeg",
-  "/images/Temple.png",
+  "/images/img4.jpeg",
+  "/images/Bholenath.jpeg",
+  "/images/img44.jpeg",
 ];
 
 export default function GalleryPreview() {

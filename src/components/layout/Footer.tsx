@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
 
             <h2 className="text-3xl font-bold text-amber-300">
-              🛕 Shri Khatu Shyam Ji
+               Shri Khatu Shyam Ji
             </h2>
 
             <p className="mt-5 leading-8 text-gray-300">
@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="mt-8">
 
               <p className="text-xl font-semibold text-amber-300">
-                🙏 जय श्री श्याम 🙏
+                 जय श्री श्याम 
               </p>
 
               <p className="mt-3 text-gray-400 leading-7">

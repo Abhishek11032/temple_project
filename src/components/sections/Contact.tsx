@@ -54,7 +54,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-xl text-[#4A1F1F]">Phone</h4>
 
-                  <p className="mt-2 text-gray-600">+91 7307348212, 9831042999</p>
+                  <p className="mt-2 text-gray-600">
+                    +91 7307348212, 9831042999
+                  </p>
                 </div>
               </div>
 
@@ -90,20 +92,26 @@ export default function Contact() {
             </div>
 
             <button
+              onClick={() => {
+                window.open(
+                  "https://www.google.com/maps/dir/?api=1&destination=25.5651967,82.4679202",
+                  "_blank",
+                );
+              }}
               className="
-              mt-10
-              inline-flex
-              items-center
-              gap-3
-              rounded-full
-              bg-[#7A2E1D]
-              px-8
-              py-4
-              text-white
-              font-semibold
-              hover:bg-[#5A2417]
-              transition
-              "
+    mt-10
+    inline-flex
+    items-center
+    gap-3
+    rounded-full
+    bg-[#7A2E1D]
+    px-8
+    py-4
+    text-white
+    font-semibold
+    hover:bg-[#5A2417]
+    transition
+  "
             >
               Get Directions
               <ArrowRight size={20} />

@@ -16,38 +16,79 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
+      // Navbar ki height ke liye offset
+      const offset = 120;
 
-    sections.forEach((section) => observer.observe(section));
+      let currentSection = "home";
 
-    return () => observer.disconnect();
+      navLinks.forEach((item) => {
+        const section = document.getElementById(item.id);
+
+        if (!section) return;
+
+        const sectionTop = section.offsetTop - offset;
+
+        if (scrollPosition >= sectionTop) {
+          currentSection = item.id;
+        }
+      });
+
+      setActiveSection(currentSection);
+    };
+
+    // Initial check
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
+
+  const handleNavClick = (id: string) => {
+    // Click ke time immediately active change
+    setActiveSection(id);
+
+    // Mobile menu close
+    setMenuOpen(false);
+
+    const section = document.getElementById(id);
+
+    if (section) {
+      const navbarHeight = 96;
+
+      const sectionPosition =
+        section.getBoundingClientRect().top +
+        window.scrollY -
+        navbarHeight;
+
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <>
       {/* ================= NAVBAR ================= */}
 
       <header className="fixed top-0 left-0 z-50 w-full border-b border-amber-500 bg-gradient-to-r from-[#3B1610] via-[#5A2417] to-[#3B1610] shadow-xl">
-
         <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 lg:px-8">
 
-          {/* Logo */}
+          {/* ================= Logo ================= */}
 
-          <a
-            href="#home"
+          <button
+            onClick={() => handleNavClick("home")}
             className="flex items-center gap-4 shrink-0"
           >
             <img
@@ -69,16 +110,15 @@ export default function Navbar() {
             />
 
             <div className="flex flex-col justify-center">
-
               <h1
                 className="
-                whitespace-nowrap
-                text-xl
-                md:text-2xl
-                lg:text-[38px]
-                font-bold
-                leading-none
-                text-amber-300
+                  whitespace-nowrap
+                  text-xl
+                  md:text-2xl
+                  lg:text-[38px]
+                  font-bold
+                  leading-none
+                  text-amber-300
                 "
               >
                 Khatu Shyam
@@ -86,30 +126,26 @@ export default function Navbar() {
 
               <p
                 className="
-                mt-2
-                text-[10px]
-                md:text-xs
-                uppercase
-                tracking-[6px]
-                text-amber-100
+                  mt-2
+                  text-[10px]
+                  md:text-xs
+                  uppercase
+                  tracking-[6px]
+                  text-amber-100
                 "
               >
                 Temple Trust
               </p>
-
             </div>
-
-          </a>
+          </button>
 
           {/* ================= Desktop Menu ================= */}
 
           <nav className="hidden lg:flex items-center gap-12">
-
             {navLinks.map((item) => (
-
-              <a
+              <button
                 key={item.id}
-                href={`#${item.id}`}
+                onClick={() => handleNavClick(item.id)}
                 className={`
                   group
                   relative
@@ -143,36 +179,46 @@ export default function Navbar() {
                     }
                   `}
                 />
-
-              </a>
-
+              </button>
             ))}
-
           </nav>
 
-          {/* Mobile Button */}
+          {/* ================= Mobile Button ================= */}
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white lg:hidden"
+            aria-label="Toggle menu"
           >
             {menuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
-
         </div>
-
       </header>
 
       {/* ================= Mobile Drawer ================= */}
 
       <div
-        className={`fixed top-0 right-0 z-[60] h-screen w-72 bg-[#3B1610] shadow-2xl transition-transform duration-500 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`
+          fixed
+          top-0
+          right-0
+          z-[60]
+          h-screen
+          w-72
+          bg-[#3B1610]
+          shadow-2xl
+          transition-transform
+          duration-500
+          ${
+            menuOpen
+              ? "translate-x-0"
+              : "translate-x-full"
+          }
+        `}
       >
+        {/* Drawer Header */}
 
         <div className="flex h-20 items-center justify-between border-b border-white/10 px-6">
-
           <h2 className="text-2xl font-bold text-amber-300">
             Menu
           </h2>
@@ -180,25 +226,25 @@ export default function Navbar() {
           <button
             className="text-white"
             onClick={() => setMenuOpen(false)}
+            aria-label="Close menu"
           >
             <X size={30} />
           </button>
-
         </div>
 
+        {/* Mobile Links */}
+
         <div className="mt-6 flex flex-col">
-
           {navLinks.map((item) => (
-
-            <a
+            <button
               key={item.id}
-              href={`#${item.id}`}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => handleNavClick(item.id)}
               className={`
                 border-b
                 border-white/10
                 px-8
                 py-5
+                text-left
                 text-lg
                 transition
                 ${
@@ -209,15 +255,12 @@ export default function Navbar() {
               `}
             >
               {item.name}
-            </a>
-
+            </button>
           ))}
-
         </div>
-
       </div>
 
-      {/* Overlay */}
+      {/* ================= Overlay ================= */}
 
       {menuOpen && (
         <div

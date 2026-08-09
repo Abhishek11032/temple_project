@@ -103,13 +103,14 @@ export default function Hero() {
               sm:text-base
               md:text-lg
               lg:text-xl
-              text-gray-400
+              text-gray-200
               leading-relaxed
             "
           >
-            A divine place where faith, devotion and tradition unite.
-            <br className="hidden sm:block" />
-            Discover the journey of our upcoming temple.
+            आस्था, भक्ति और सनातन संस्कृति का एक दिव्य संगम।
+            {/* <br className="hidden sm:block" /> */}
+            आइए, श्री खाटू श्याम जी मंदिर के निर्माण और सेवा यात्रा का हिस्सा
+            बनें।
           </motion.p>
 
           {/* Button */}

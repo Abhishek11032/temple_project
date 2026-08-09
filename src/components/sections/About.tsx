@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { Landmark, Flower2, HeartHandshake, HandHelping } from "lucide-react";
 
 export default function About() {
   const navigate = useNavigate();
@@ -117,34 +118,46 @@ export default function About() {
             {/* Cards */}
 
             <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-4 sm:gap-5">
-              <div className="bg-white shadow-lg rounded-xl p-4 sm:p-5">
-                <span className="text-xl sm:text-2xl">🛕</span>
+              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                <Landmark
+                  size={34}
+                  className="text-[#7A2E1D]"
+                  strokeWidth={2}
+                />
 
-                <h4 className="mt-2 font-semibold text-sm sm:text-base">
+                <h4 className="mt-4 font-semibold text-[#4A1F1F] text-sm sm:text-base">
                   Ancient Shiva Temple
                 </h4>
               </div>
 
-              <div className="bg-white shadow-lg rounded-xl p-4 sm:p-5">
-                <span className="text-xl sm:text-2xl">🌸</span>
+              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                <Flower2 size={34} className="text-[#7A2E1D]" strokeWidth={2} />
 
-                <h4 className="mt-2 font-semibold text-sm sm:text-base">
+                <h4 className="mt-4 font-semibold text-[#4A1F1F] text-sm sm:text-base">
                   Khatu Shyam Temple
                 </h4>
               </div>
 
-              <div className="bg-white shadow-lg rounded-xl p-4 sm:p-5">
-                <span className="text-xl sm:text-2xl">🙏</span>
+              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                <HeartHandshake
+                  size={34}
+                  className="text-[#7A2E1D]"
+                  strokeWidth={2}
+                />
 
-                <h4 className="mt-2 font-semibold text-sm sm:text-base">
+                <h4 className="mt-4 font-semibold text-[#4A1F1F] text-sm sm:text-base">
                   Spiritual Heritage
                 </h4>
               </div>
 
-              <div className="bg-white shadow-lg rounded-xl p-4 sm:p-5">
-                <span className="text-xl sm:text-2xl">❤️</span>
+              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+                <HandHelping
+                  size={34}
+                  className="text-[#7A2E1D]"
+                  strokeWidth={2}
+                />
 
-                <h4 className="mt-2 font-semibold text-sm sm:text-base">
+                <h4 className="mt-4 font-semibold text-[#4A1F1F] text-sm sm:text-base">
                   Community Service
                 </h4>
               </div>

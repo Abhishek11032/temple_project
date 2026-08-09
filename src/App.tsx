@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AppRoutes from "./routes/AppRoutes";
+import PageLoader from "./components/layout/PageLoader";
 
 const criticalImages = [
   "/images/logo.png",
@@ -72,5 +73,10 @@ export default function App() {
 
   if (!ready) return null;
 
-  return <AppRoutes />;
+  return (
+    <>
+      <PageLoader />
+      <AppRoutes />
+    </>
+  );
 }
