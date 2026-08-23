@@ -126,12 +126,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
   ],
 
   ekadashi: [
-    {
-      image: "/images/img30.jpeg",
-      title: "एकादशी",
-      guest: "श्री जगदीश सोनकर जी",
-      date:"28/02/26",
-    },
+    
     {
       image: "/images/img36.jpeg",
       title: "एकादशी",
@@ -142,7 +137,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img31.jpeg",
       title: "एकादशी",
-      guest: "बलवा ब्लॉक प्रमुख अनीता सुरेंद्र शुक्ला",
+      guest: "ब्लॉक प्रमुख अनीता सुरेंद्र शुक्ला",
       event: "भजन संध्या आयोजन एकादशी",
       date:"28/02/26",
     },
@@ -150,6 +145,34 @@ export const galleryData : Record<string, GalleryItem[]> = {
       image: "/images/img32.jpeg",
       title: "एकादशी",
       guest: "अजय त्रिपाठी प्रबंधक जनता इंटर कॉलेज",
+      event: "भजन संध्या आयोजन एकादशी",
+      date:"28/02/26",
+    },
+    {
+      image: "/images/img38.jpeg",
+      title: "एकादशी",
+      guest: "श्री श्री 1008 महामंडलेश्वर स्वामी आत्मानंद सरस्वती पीठाधीश्वर नासिक मठ , Ex MLAरविंद्र नाथ त्रिपाठी",
+      event: "भजन संध्या आयोजन एकादशी",
+      date:"28/02/26",
+
+    },
+    {
+      image: "/images/img30.jpeg",
+      title: "एकादशी",
+      guest: "श्री जगदीश सोनकर जी",
+      date:"28/02/26",
+    },
+    {
+      image: "/images/img39.jpeg",
+      title: "एकादशी",
+      guest: "भाजपा नेता ब्रह्मदेव तिवारी",
+      event: "भजन संध्या आयोजन एकादशी",
+      date:"28/02/26",      
+    },
+    {
+      image: "/images/img41.jpeg",
+      title: "एकादशी",
+      guest: "श्री श्री 1008 महामंडलेश्वर स्वामी आत्मानंद सरस्वती पीठाधीश्वर नासिक मठ , Ex MLAरविंद्र नाथ त्रिपाठी  , बलवा ब्लॉक प्रमुख अनीता सुरेंद्र शुक्ला",
       event: "भजन संध्या आयोजन एकादशी",
       date:"28/02/26",
     },
@@ -171,28 +194,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
       // guest: "श्री GHI जी",
       date:"28/02/26",
     },
-    {
-      image: "/images/img38.jpeg",
-      title: "एकादशी",
-      guest: "श्री श्री 1008 महामंडलेश्वर स्वामी आत्मानंद सरस्वती पीठाधीश्वर नासिक मठ , Ex MLAरविंद्र नाथ त्रिपाठी",
-      event: "भजन संध्या आयोजन एकादशी",
-      date:"28/02/26",
-
-    },
-    {
-      image: "/images/img39.jpeg",
-      title: "एकादशी",
-      guest: "भाजपा नेता ब्रह्मदेव तिवारी",
-      event: "भजन संध्या आयोजन एकादशी",
-      date:"28/02/26",      
-    },
-    {
-      image: "/images/img41.jpeg",
-      title: "एकादशी",
-      guest: "श्री श्री 1008 महामंडलेश्वर स्वामी आत्मानंद सरस्वती पीठाधीश्वर नासिक मठ , Ex MLAरविंद्र नाथ त्रिपाठी  , बलवा ब्लॉक प्रमुख अनीता सुरेंद्र शुक्ला",
-      event: "भजन संध्या आयोजन एकादशी",
-      date:"28/02/26",
-    },
+    
     {
       image: "/images/img42.jpeg",
       title: "एकादशी",
