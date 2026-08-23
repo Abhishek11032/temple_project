@@ -39,13 +39,13 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img12.jpeg",
       title: "संकल्प दिवस",
-      // guest: "श्री DEF जी",
+      guest: "भाजपा नेता श्री ब्रह्मदेव मिश्रा जी, श्री ब्रह्मदेव तिवारी जी,श्री अशोक कुमार पाण्डेय जी",
       date:"23/09/25",
     },
     {
       image: "/images/img13.jpeg",
       title: "संकल्प दिवस",
-      // guest: "श्री DEF जी",
+      guest: "श्री अशोक कुमार पाण्डेय जी",
       date:"23/09/25", 
     },
     {
@@ -98,7 +98,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img14.jpeg",
       title: "जन्मोत्सव",
-      guest: "Ex विधायिका सुषमा पटेल , भाजपा नेता ब्रह्मदेव मिश्रा उत्तर प्रदेश",
+      guest: "Ex विधायिका सुषमा पटेल , भाजपा नेता ब्रह्मदेव मिश्रा जी",
       event: "खाटू श्याम जन्मोत्सव",
       date:"01/11/25",
     },
