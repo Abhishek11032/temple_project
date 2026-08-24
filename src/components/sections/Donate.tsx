@@ -138,7 +138,7 @@ export default function Donate() {
             <div className="mt-10 flex justify-center">
               <div className="rounded-2xl border-2 border-dashed border-amber-400 bg-amber-50 p-6">
                 <img
-                  src="/images/qr-code.png"
+                  src="/images/QRCode.jpeg"
                   alt="Donation QR"
                   className="h-56 w-56 object-contain"
                 />

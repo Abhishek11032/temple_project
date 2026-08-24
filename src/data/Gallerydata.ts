@@ -14,32 +14,32 @@ export const galleryData : Record<string, GalleryItem[]> = {
         {
       image: "/images/img10.jpeg",
       title: "संकल्प दिवस",
-      guest: "Ex विधायिका सुषमा पटेल , भाजपा नेता ब्रह्मदेव मिश्रा उत्तर प्रदेश ,  श्री अशोक कुमार पाण्डेय ",
+      guest: " श्री ब्रह्मदेव तिवारी , श्री रमेश मौर्य, श्री अजय पाण्डेय, भाजपा नेता ब्रह्मदेव मिश्रा उत्तर प्रदेश ,  श्री अशोक कुमार पाण्डेय ",
       event: "खाटू श्याम मंदिर बनवाने का संकल्प दिवस",
       date:"23/09/25",
     },
     {
       image: "/images/img7.jpeg",
       title: "संकल्प दिवस",
-      // guest: "श्री XYZ जी",
+      guest: "श्री भोला प्रसाद पाण्डेय",
       date:"23/09/25",
         },
     {
       image: "/images/img11.jpeg",
       title: "संकल्प दिवस",
-      // guest: "श्री DEF जी",
+      guest: "प्रधान विजय कुमार",
       date:"23/09/25",
     },
     {
       image: "/images/img6.jpeg",
       title: "संकल्प दिवस",
-      // guest: "मुख्य अतिथि : श्री ABC जी",
+      guest: "श्री पंकज पाण्डेय , श्री अखिलेश कुमार बिंद",
       date:"23/09/25",
     },
     {
       image: "/images/img12.jpeg",
       title: "संकल्प दिवस",
-      guest: "भाजपा नेता श्री ब्रह्मदेव मिश्रा जी, श्री ब्रह्मदेव तिवारी जी,श्री अशोक कुमार पाण्डेय जी",
+      guest: "भाजपा नेता श्री ब्रह्मदेव मिश्रा जी , श्री ब्रह्मदेव तिवारी जी , श्री रमेश मौर्य भाजपा नेता",
       date:"23/09/25",
     },
     {
@@ -69,13 +69,13 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img8.jpeg",
       title: "संकल्प दिवस",
-      // guest: "मुख्य अतिथि : श्री ABC जी",
+      guest: "श्री हरिवंश तिवारी , श्री विनोद तिवारी अधिवक्ता",
       date:"23/09/25",
     },
     {
       image: "/images/img9.jpeg",
       title: "संकल्प दिवस",
-      // guest: "श्री XYZ जी",
+      guest: "श्री ब्रह्मदेव मिश्रा भाजपा नेता , श्री महेश पाण्डेय",
       date:"23/09/25",
     },
     {
@@ -84,10 +84,17 @@ export const galleryData : Record<string, GalleryItem[]> = {
       // guest: "मुख्य अतिथि : श्री ABC जी",
       date:"23/09/25",
     },
-    {
-      image: "/images/img11.jpeg",
+    
+     {
+      image: "/images/img5.jpeg",
       title: "संकल्प दिवस",
-      // guest: "श्री XYZ जी",
+      // guest: "श्री DEF जी",
+      date:"23/09/25",
+    },
+    {
+      image: "/images/img2.jpeg",
+      title: "संकल्प दिवस",
+      guest: "श्री ब्रह्मदेव मिश्रा भाजपा नेता उत्तर प्रदेश , श्री ब्रह्मदेव तिवारी भाजपा नेता , श्री अजय पाण्डेय , श्री अशोक पाण्डेय",
       date:"23/09/25",
     },
     {
@@ -98,7 +105,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img14.jpeg",
       title: "जन्मोत्सव",
-      guest: "Ex विधायिका सुषमा पटेल , भाजपा नेता ब्रह्मदेव मिश्रा जी",
+      guest: "पूर्व विधायक सुषमा पटेल नीतीश बिंद , रमेश मौर्य , अखिलेश बिंद",
       event: "खाटू श्याम जन्मोत्सव",
       date:"01/11/25",
     },
@@ -109,18 +116,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
       date:"01/11/25",
 
     },
-    {
-      image: "/images/img5.jpeg",
-      title: "जन्मोत्सव",
-      // guest: "श्री DEF जी",
-      date:"01/11/25",
-    },
-    {
-      image: "/images/img2.jpeg",
-      title: "जन्मोत्सव",
-      // guest: "श्री DEF जी",
-      date:"01/11/25",
-    },
+   
 
 
   ],
@@ -141,13 +137,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
       event: "भजन संध्या आयोजन एकादशी",
       date:"28/02/26",
     },
-    {
-      image: "/images/img32.jpeg",
-      title: "एकादशी",
-      guest: "अजय त्रिपाठी प्रबंधक जनता इंटर कॉलेज",
-      event: "भजन संध्या आयोजन एकादशी",
-      date:"28/02/26",
-    },
+    
     {
       image: "/images/img38.jpeg",
       title: "एकादशी",
@@ -159,7 +149,7 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img30.jpeg",
       title: "एकादशी",
-      guest: "श्री जगदीश सोनकर जी",
+      guest: "पूर्व विधायक पूर्व मंत्री जगदीश सोनकर, अखिलेश बिंद",
       date:"28/02/26",
     },
     {
@@ -179,31 +169,32 @@ export const galleryData : Record<string, GalleryItem[]> = {
     {
       image: "/images/img33.jpeg",
       title: "एकादशी",
-      // guest: "श्री GHI जी",
+      guest: "श्री ब्रह्मदेव तिवारी , श्री भोलानाथ पाण्डेय , भजन गायक सचिन तिवारी",
       date:"28/02/26",
     },
     {
       image: "/images/img34.jpeg",
       title: "एकादशी",
-      // guest: "श्री GHI जी",
+      guest: "श्री संतोष मिश्रा भाजपा नेता जौनपुर , अजय पाण्डेय",
       date:"28/02/26",
     },
     {
       image: "/images/img35.jpeg",
       title: "एकादशी",
-      // guest: "श्री GHI जी",
+      guest: "श्री ब्रह्म ज्योति तिवारी ,श्री अजय पाण्डेय कोलकाता",
       date:"28/02/26",
     },
     
     {
       image: "/images/img42.jpeg",
       title: "एकादशी",
+      guest:"श्री भोलानाथ पाण्डेय श्री रजनीश लडानिया (कोलकाता) सर्वेश कुमार शुक्ला युवा नेता,ब्रह्मदेव तिवारी , श्री महेंद्र पाण्डेय पूर्व प्रधान",
       date:"28/02/26",
     },
     {
       image: "/images/img37.jpeg",
       title: "एकादशी",
-      guest: "श्री श्री 1008 महामंडलेश्वर स्वामी आत्मानंद सरस्वती पीठाधीश्वर नासिक मठ",
+      guest: "श्री श्री 1008 महामंडलेश्वर स्वामी आत्मानंद सरस्वती पीठाधीश्वर नासिक मठ , श्री अजय पाण्डेय (कोलकाता)",
       event: "भजन संध्या आयोजन एकादशी",
       date:"28/02/26",
     },
@@ -228,6 +219,13 @@ export const galleryData : Record<string, GalleryItem[]> = {
       title: "भूमि पूजन",
       guest: "श्री ब्रह्मदेव मिश्रा जी",
       date: "19/04/26",
+    },
+    {
+      image: "/images/img32.jpeg",
+      title: "भूमि पूजन",
+      guest: "श्री ब्रह्मदेव तिवारी श्री , अजय पाण्डेय , श्री अशोक पाण्डेय",
+      // event: "भजन संध्या आयोजन एकादशी",
+      date:"19/04/26",
     },
     {
       image: "/images/img28.jpeg",

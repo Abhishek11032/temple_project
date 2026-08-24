@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { FaFacebookF } from "react-icons/fa";
+import { PiYoutubeLogoFill } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 
 const links = [
@@ -90,7 +91,7 @@ export default function Footer() {
                   सरसरा वाराणसी मंडल बरसठी
                   रेलवे स्टेशन के समीप
                   <br />
-                  जौनपुर,
+                  बनारस (मंडल),
                   उत्तर प्रदेश
                 </p>
               </div>
@@ -113,7 +114,7 @@ export default function Footer() {
                 />
 
                 <p className="break-all text-gray-300">
-                  sshyamkmdtrust@gmail.com
+                  Shivahyamdevbhumi@gmail.com
                 </p>
               </div>
 
@@ -132,6 +133,23 @@ export default function Footer() {
                   Shri Shyam Temple Trust
                 </a>
               </div>
+
+              <div className="flex items-center gap-3">
+                <PiYoutubeLogoFill
+                  size={18}
+                  className="text-amber-300"
+                />
+
+                <a
+                  href="https://youtube.com/@ajjayspandey?si=I2ZE_VAyRJ7cY_kN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 transition-colors duration-300 hover:text-amber-300"
+                >
+                  Shiv Shyam Khatu Mandir Varanasi
+                </a>
+              </div>
+
             </div>
           </div>
 
