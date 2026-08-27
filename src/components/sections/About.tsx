@@ -7,10 +7,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#FFF8F2] py-16 sm:py-20 lg:py-28 overflow-x-hidden w-full max-w-full"
+      className="w-full overflow-hidden bg-[#FFF8F2] py-16 sm:py-20 lg:py-28"
     >
-      <div className="w-full max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] items-center gap-12 lg:gap-16 w-full max-w-full">
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <div className="grid w-full min-w-0 grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* LEFT */}
 
           <motion.div
@@ -18,7 +18,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative flex justify-center min-w-0 pb-8 sm:pb-10"
+            className="relative flex w-full min-w-0 justify-center pb-8 sm:pb-10"
           >
             {/* Main Image */}
 
@@ -73,7 +73,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="min-w-0 w-full max-w-full mt-10 lg:mt-0 break-words"
+            className="mt-10 flex w-full min-w-0 flex-col items-center justify-center break-words text-center lg:mt-0"
           >
             <p className="uppercase tracking-[6px] sm:tracking-[8px] text-amber-700 font-semibold text-sm sm:text-base">
               ABOUT TEMPLE
@@ -97,7 +97,7 @@ export default function About() {
               Temple Project
             </h2>
 
-            <div className="mt-5 sm:mt-7 h-1 w-20 sm:w-28 rounded-full bg-amber-500"></div>
+            <div className="mt-5 sm:mt-7 h-1 w-20 sm:w-28 rounded-full bg-amber-500 flex-row items-center"></div>
 
             <p className="mt-6 sm:mt-8 text-base sm:text-lg leading-7 sm:leading-9 text-gray-700">
               एक सहस्राब्दी (एक हजार वर्ष) प्राचीन शिव मंदिर परिसर में, जहाँ

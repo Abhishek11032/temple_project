@@ -9,10 +9,22 @@ html{
   scroll-behavior:smooth;
 }
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
 body{
   font-family:Arial, Helvetica, sans-serif;
   background:#FFFDF8;
   color:#2b2b2b;
+  overflow-x: hidden;
+
 }
 
 /* a{
@@ -23,4 +35,22 @@ body{
 img{
   width:100%;
   display:block;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7A2E1D;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5A2417;
 }

@@ -45,7 +45,7 @@ export default function Hero() {
       {/* Hero Content */}
 
       <div className="absolute inset-0 flex  items-center justify-center px-5 sm:px-8">
-        <div className="max-w-5xl text-center text-white">
+        <div className=" text-center text-white">
           {/* Welcome */}
 
           <motion.p

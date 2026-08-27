@@ -104,8 +104,8 @@ export default function Navbar() {
     <>
       {/* ================= NAVBAR ================= */}
 
-      <header className="fixed top-0 left-0 z-50 w-full border-b border-amber-500 bg-gradient-to-r from-[#3B1610] via-[#5A2417] to-[#3B1610] shadow-xl">
-        <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 lg:px-8">
+      <header className="fixed top-0 left-0 z-50 w-[100%] border-b border-amber-500 bg-gradient-to-r from-[#3B1610] via-[#5A2417] to-[#3B1610] shadow-xl">
+        <div className=" flex h-24 w-full items-center justify-between px-5 lg:px-8">
           {/* ================= Logo ================= */}
 
           <button
