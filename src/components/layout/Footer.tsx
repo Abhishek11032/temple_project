@@ -1,7 +1,9 @@
+"use client";
+
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { FaFacebookF } from "react-icons/fa";
 import { PiYoutubeLogoFill } from "react-icons/pi";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 const links = [
   { title: "Home", id: "home" },
@@ -13,10 +15,10 @@ const links = [
 ];
 
 export default function Footer() {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleNavigation = (id: string) => {
-    navigate(`/?section=${id}`);
+    router.push(`/?section=${id}`);
   };
 
   return (

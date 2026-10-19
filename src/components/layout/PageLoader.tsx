@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
+import { usePathname, useSearchParams } from "next/navigation";
 
 import Loader from "../common/Loader";
 import { useLoader } from "../../context/LoaderContext";
@@ -11,21 +13,18 @@ export default function PageLoader() {
     hideLoader,
   } = useLoader();
 
-  const location = useLocation();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const search = searchParams?.toString() ?? "";
 
   // Current route ko initially store karenge.
   // Isse initial page load par loader dobara nahi chalega.
   const previousPath = useRef(
-    location.pathname +
-      location.search +
-      location.hash
+    pathname + "?" + search
   );
 
   useEffect(() => {
-    const currentPath =
-      location.pathname +
-      location.search +
-      location.hash;
+    const currentPath = pathname + "?" + search;
 
     // Initial render:
     // index.html wala loader already handle kar raha hai.
@@ -36,15 +35,15 @@ export default function PageLoader() {
     // Actual route change
     previousPath.current = currentPath;
 
-    // Loader ON
+    // The destination route is already rendered at this point. Keep the
+    // transition indicator brief, then let its CSS fade-out finish.
     showLoader();
+    const frame = requestAnimationFrame(hideLoader);
 
-    // Minimum 2.5 seconds ke baad OFF
-    hideLoader();
+    return () => cancelAnimationFrame(frame);
   }, [
-    location.pathname,
-    location.search,
-    location.hash,
+    pathname,
+    search,
     showLoader,
     hideLoader,
   ]);

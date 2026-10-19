@@ -1,9 +1,9 @@
-import { Routes, Route } from "react-router-dom";
+﻿import { Routes, Route } from "react-router-dom";
 
-import Home from "../pages/Home";
-import ExploreJourney from "../pages/ExploreJourney";
-import AboutPage from "../pages/AboutPage";
-import Gallery from "../pages/Gallery";
+import Home from "../site-pages/Home";
+import ExploreJourney from "../site-pages/ExploreJourney";
+import AboutPage from "../site-pages/AboutPage";
+import Gallery from "../site-pages/Gallery";
 
 export default function AppRoutes() {
   return (

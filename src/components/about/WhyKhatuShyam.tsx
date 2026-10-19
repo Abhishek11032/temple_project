@@ -1,4 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function WhyKhatuShyam() {
   return (
@@ -99,9 +102,12 @@ export default function WhyKhatuShyam() {
             className="relative"
           >
 
-            <img
+            <Image
               src="/images/vision2.png"
               alt="Khatu Shyam Ji"
+              width={1536}
+              height={1024}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="
                 w-full
                 rounded-[30px]

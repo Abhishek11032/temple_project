@@ -5,6 +5,7 @@ import {
   UtensilsCrossed,
   HeartHandshake,
 } from "lucide-react";
+import Image from "next/image";
 export default function Donate() {
   return (
     <section
@@ -137,9 +138,12 @@ export default function Donate() {
 
             <div className="mt-10 flex justify-center">
               <div className="rounded-2xl border-2 border-dashed border-amber-400 bg-amber-50 p-6">
-                <img
+            <Image
                   src="/images/QRCode.jpeg"
                   alt="Donation QR"
+                  width={1064}
+                  height={1600}
+                  sizes="224px"
                   className="h-56 w-56 object-contain"
                 />
               </div>

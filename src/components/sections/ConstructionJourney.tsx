@@ -1,6 +1,9 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Flower2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 
 const journey = [
   {
@@ -62,7 +65,7 @@ export default function ConstructionJourney() {
             return (
               <Link
                 key={item.slug}
-                to={`/gallery/${item.slug}`}
+                href={`/gallery/${item.slug}`}
                 className="block w-full max-w-[390px]"
               >
                 <motion.div
@@ -90,9 +93,12 @@ export default function ConstructionJourney() {
                 >
                   {/* Image */}
                   <div className="overflow-hidden flex-shrink-0">
-                    <img
+                <Image
                       src={item.image}
                       alt={item.title}
+                      width={1600}
+                      height={1200}
+                      sizes="(min-width: 1024px) 390px, (min-width: 640px) 50vw, 100vw"
                       className="
                 h-64
                 w-full

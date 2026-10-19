@@ -1,5 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { CalendarDays, Clock3 } from "lucide-react";
+import Image from "next/image";
 
 export default function Updates() {
   return (
@@ -13,11 +15,11 @@ export default function Updates() {
 
         <div className="text-center">
           <p className="font-semibold uppercase tracking-[8px] text-amber-700">
-            विशेष आयोजन
+            मंदिर का पावन संकल्प
           </p>
 
           <h2 className="mt-4 text-4xl font-bold text-[#4A1F1F] md:text-5xl">
-            भूमि पूजन एवं शिलान्यास समारोह
+            श्री खाटू श्याम जी मंदिर
           </h2>
 
           <div className="mx-auto mt-6 h-1 w-24 rounded-full bg-amber-500"></div>
@@ -36,8 +38,11 @@ export default function Updates() {
             viewport={{ once: true }}
           >
             <div className=" w-full h-[50%] md:w-[50%] ml-0 md:ml-38 overflow-hidden rounded-3xl border-5 border-orange-300 bg-white shadow-xl">
-              <img
+          <Image
                 src="/images/swamiji.jpeg"
+                width={975}
+                height={1600}
+                sizes="(min-width: 768px) 50vw, 100vw"
                 alt="स्वामी आत्मानंद सरस्वती"
                 className="h-full w-full object-cover"
               />
@@ -67,27 +72,7 @@ export default function Updates() {
             viewport={{ once: true }}
           >
 
-            {/* Bhumi Pujan Details */}
-
-            <div className="mt-8 rounded-2xl bg-amber-50 p-5 shadow-sm">
-
-              <div className="flex items-center gap-3">
-                <CalendarDays size={20} className="text-amber-600" />
-                <span className="font-medium">
-                  भूमि पूजन : 19 अप्रैल 2026
-                </span>
-              </div>
-
-              <div className="mt-3 flex items-center gap-3">
-                <Clock3 size={20} className="text-amber-600" />
-                <span className="font-medium">
-                  समय : प्रातः 09:00 बजे
-                </span>
-              </div>
-
-            </div>
-
-            <div className="mt-6 space-y-5 text-lg leading-8 text-gray-700">
+            <div className="mt-8 space-y-5 text-lg leading-8 text-gray-700">
 
               <p>
                 खाटू श्याम मंदिर निर्माण कार्य का शुभारंभ
@@ -99,34 +84,24 @@ export default function Updates() {
               </p>
 
               <p>
-                दिनांक <strong>01 नवम्बर 2025</strong> को वैदिक
-                मंत्रोच्चार एवं धार्मिक अनुष्ठानों के साथ मंदिर का
-                <strong> शिलान्यास समारोह</strong> आयोजित किया गया,
-                जिसमें बड़ी संख्या में श्रद्धालुओं ने सहभागिता की।
+                श्री खाटू श्याम जी की भक्ति हमें श्रद्धा, प्रेम और सेवा के मार्ग पर चलने की प्रेरणा देती है।
+                मंदिर का यह पावन संकल्प भक्तों के लिए ऐसा स्थल बनाने की भावना से जुड़ा है, जहाँ वे भक्ति
+                और शांति के साथ बाबा श्याम का स्मरण कर सकें।
               </p>
 
               <p>
-                इसके पश्चात दिनांक
-                <strong> 19 अप्रैल 2026 </strong>
-                को प्रातः
-                <strong> 09:00 बजे </strong>
-                मंदिर परिसर में विधि-विधान के साथ
-                <strong> भूमि पूजन </strong>
-                संपन्न हुआ, जिसके साथ मंदिर निर्माण कार्य का
-                शुभ प्रारंभ हुआ।
+                यह मंदिर आस्था, भक्ति और सनातन संस्कृति के प्रति समर्पण का प्रतीक बने—यही इस प्रयास की
+                भावना है। भक्तों की सहभागिता और संतों का आशीर्वाद इस संकल्प को निरंतर संबल देते हैं।
               </p>
 
               <p>
-                इन दोनों पावन आयोजनों ने मंदिर निर्माण की
-                आधारशिला को आध्यात्मिक ऊर्जा, संतों के आशीर्वाद
-                एवं भक्तों की श्रद्धा से सशक्त बनाया।
+                मंदिर का उद्देश्य केवल निर्माण तक सीमित नहीं, बल्कि आने वाली पीढ़ियों को श्रद्धा, सेवा
+                और सांस्कृतिक मूल्यों से जोड़ने की प्रेरणा भी है।
               </p>
 
               <p>
-                यह अवसर मंदिर की गौरवशाली यात्रा का एक
-                महत्वपूर्ण अध्याय बना, जिसने सेवा, श्रद्धा और
-                सनातन संस्कृति के संरक्षण के संकल्प को और अधिक
-                दृढ़ किया।
+                आइए, बाबा श्याम के चरणों में श्रद्धा अर्पित करते हुए सेवा, प्रेम और भक्ति के इस भाव को
+                अपने जीवन में अपनाएँ।
               </p>
 
             </div>

@@ -1,9 +1,12 @@
+"use client";
+
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Landmark, Flower2, HeartHandshake, HandHelping } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <section
       id="about"
@@ -22,10 +25,13 @@ export default function About() {
           >
             {/* Main Image */}
 
-            <div className="relative w-full max-w-[430px] overflow-hidden rounded-[35px] shadow-2xl">
-              <img
+            <div className="relative w-full max-w-[430px] overflow-hidden rounded-[2rem] border-4 border-white bg-[#E9D9C9] shadow-[0_24px_60px_rgba(74,31,31,0.18)] ring-1 ring-[#7A2E1D]/10 sm:rounded-[2.2rem]">
+            <Image
                 src="/images/bhumi-pujan.jpeg"
                 alt=""
+                width={720}
+                height={911}
+                sizes="(min-width: 1024px) 430px, 100vw"
                 className="
                 w-full
                 aspect-[430/560]
@@ -53,9 +59,12 @@ export default function About() {
             max-w-[176px]
             "
             >
-              <img
+            <Image
                 src="/images/left-side.jpeg"
                 alt=""
+                width={558}
+                height={993}
+                sizes="(min-width: 640px) 176px, 28vw"
                 className="
                 w-full
                 aspect-[176/224]
@@ -109,7 +118,7 @@ export default function About() {
               प्रज्वलित रहेगी।
             </p>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-9 text-gray-700">
+            <p className="mt-4 max-w-3xl text-base leading-7 text-gray-700 sm:mt-5 sm:text-lg sm:leading-9">
               A magnificent Shri Khatu Shyam Ji Temple is now being constructed
               within the same holy premises, preserving our spiritual heritage
               while creating a divine place for future generations.
@@ -117,8 +126,8 @@ export default function About() {
 
             {/* Cards */}
 
-            <div className="mt-8 sm:mt-10 grid grid-cols-2 gap-4 sm:gap-5">
-              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-9 sm:gap-4">
+              <div className="min-h-28 rounded-2xl border border-[#7A2E1D]/10 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5">
                 <Landmark
                   size={34}
                   className="text-[#7A2E1D]"
@@ -130,7 +139,7 @@ export default function About() {
                 </h4>
               </div>
 
-              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="min-h-28 rounded-2xl border border-[#7A2E1D]/10 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5">
                 <Flower2 size={34} className="text-[#7A2E1D]" strokeWidth={2} />
 
                 <h4 className="mt-4 font-semibold text-[#4A1F1F] text-sm sm:text-base">
@@ -138,7 +147,7 @@ export default function About() {
                 </h4>
               </div>
 
-              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="min-h-28 rounded-2xl border border-[#7A2E1D]/10 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5">
                 <HeartHandshake
                   size={34}
                   className="text-[#7A2E1D]"
@@ -150,7 +159,7 @@ export default function About() {
                 </h4>
               </div>
 
-              <div className="rounded-xl bg-white p-5 shadow-lg transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="min-h-28 rounded-2xl border border-[#7A2E1D]/10 bg-white p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-5">
                 <HandHelping
                   size={34}
                   className="text-[#7A2E1D]"
@@ -164,18 +173,21 @@ export default function About() {
             </div>
 
             <button
-              onClick={() => navigate("/about")}
+              type="button"
+              onClick={() => router.push("/about")}
               className="
-              mt-8 sm:mt-10
+              mt-8 sm:mt-9
               bg-[#7A2E1D]
               hover:bg-[#5A2417]
-              transition
+              transition-colors duration-300
               px-7 sm:px-9
               py-3 sm:py-4
               rounded-full
               text-white
               font-semibold
               text-sm sm:text-base
+              focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#7A2E1D]
+              shadow-md hover:shadow-lg
               "
             >
               Learn More

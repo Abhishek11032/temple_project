@@ -1,3 +1,5 @@
+"use client";
+
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -16,6 +18,8 @@ export default function BackToTop() {
 
   return (
     <button
+      type="button"
+      aria-label="Back to top"
       onClick={() =>
         window.scrollTo({
           top: 0,

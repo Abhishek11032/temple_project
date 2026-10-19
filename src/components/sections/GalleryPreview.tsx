@@ -1,6 +1,9 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 
 const images = [
   "/images/bhumi-puja.jpeg",
@@ -59,9 +62,12 @@ export default function GalleryPreview() {
               className="overflow-hidden rounded-3xl shadow-xl group cursor-pointer"
             >
 
-              <img
+              <Image
                 src={image}
                 alt=""
+                width={1600}
+                height={1200}
+                sizes="(min-width: 1344px) 397px, (min-width: 768px) calc((100vw - 88px) / 3), calc((100vw - 68px) / 2)"
                 className="
                 h-64
                 w-full
@@ -83,7 +89,7 @@ export default function GalleryPreview() {
         <div className="mt-14 flex justify-center">
 
           <Link
-            to="/gallery"
+            href="/gallery"
             className="
             inline-flex
             items-center

@@ -1,0 +1,217 @@
+#app-loader,
+.route-loader {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff8e8;
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(124, 73, 35, 0.52), transparent 48%),
+    linear-gradient(145deg, #21100d 0%, #4a1f1f 52%, #2c120d 100%);
+}
+
+#app-loader {
+  z-index: 999999;
+  opacity: 1;
+  transition: opacity 420ms cubic-bezier(0.22, 0.68, 0, 1);
+}
+
+#app-loader.is-fading {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.route-loader {
+  z-index: 9999;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 280ms ease,
+    visibility 0s linear 280ms;
+}
+
+.route-loader.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 280ms ease;
+}
+
+#app-loader::before,
+#app-loader::after,
+.route-loader::before,
+.route-loader::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(245, 208, 125, 0.25);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+#app-loader::before,
+.route-loader::before {
+  width: min(82vw, 34rem);
+  box-shadow:
+    0 0 55px rgba(227, 174, 80, 0.08),
+    inset 0 0 55px rgba(227, 174, 80, 0.04);
+  animation: loader-halo 6.5s ease-in-out infinite;
+}
+
+#app-loader::after,
+.route-loader::after {
+  width: min(68vw, 27rem);
+  border-color: rgba(245, 208, 125, 0.13);
+  animation: loader-halo 6.5s ease-in-out 900ms infinite reverse;
+}
+
+.loader-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(100% - 2rem, 30rem);
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.loader-emblem {
+  position: relative;
+  display: grid;
+  width: clamp(7.5rem, 28vw, 10.5rem);
+  aspect-ratio: 1;
+  place-items: center;
+  isolation: isolate;
+}
+
+.loader-emblem::before {
+  position: absolute;
+  z-index: -1;
+  inset: 5%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 203, 104, 0.2), rgba(251, 203, 104, 0) 70%);
+  content: "";
+  animation: loader-glow 5s ease-in-out infinite;
+}
+
+.loader-logo {
+  display: block;
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(226, 174, 82, 0.24));
+  animation: loader-arrive 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.loader-title {
+  margin: 1.25rem 0 0;
+  color: #f4d99d;
+  font-size: clamp(1.1rem, 4vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  line-height: 1.4;
+}
+
+.loader-subtitle {
+  margin: 0.65rem 0 0;
+  color: rgba(255, 248, 232, 0.9);
+  font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+  letter-spacing: 0.16em;
+  line-height: 1.6;
+}
+
+.loader-progress {
+  position: relative;
+  width: 8rem;
+  height: 2px;
+  margin-top: 2rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(245, 208, 125, 0.2);
+}
+
+.loader-progress span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 34%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(245, 208, 125, 0), #f4d99d, rgba(245, 208, 125, 0));
+  animation: loader-sweep 1.7s ease-in-out infinite;
+}
+
+@keyframes loader-halo {
+  0%,
+  100% {
+    opacity: 0.45;
+    scale: 0.96;
+  }
+
+  50% {
+    opacity: 0.9;
+    scale: 1.02;
+  }
+}
+
+@keyframes loader-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes loader-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes loader-sweep {
+  from {
+    transform: translateX(-130%);
+  }
+
+  to {
+    transform: translateX(400%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #app-loader,
+  .route-loader,
+  .route-loader.is-visible {
+    transition: none;
+  }
+
+  #app-loader::before,
+  #app-loader::after,
+  .route-loader::before,
+  .route-loader::after,
+  .loader-emblem::before,
+  .loader-logo,
+  .loader-progress span {
+    animation: none;
+  }
+
+  .loader-progress span {
+    width: 100%;
+    transform: none;
+  }
+}

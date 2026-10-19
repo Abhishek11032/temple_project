@@ -8,9 +8,17 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.next
+out
 dist
 dist-ssr
 *.local
+
+# Local environment files can contain credentials. Keep safe templates tracked.
+.env*
+!.env.example
+!.env.sample
+!.env.template
 
 # Editor directories and files
 .vscode/*

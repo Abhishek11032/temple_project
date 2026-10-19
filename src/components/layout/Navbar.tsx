@@ -1,6 +1,9 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", id: "home" },
@@ -15,8 +18,8 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,11 +55,10 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sectionId = searchParams.get("section");
+    const sectionId = searchParams?.get("section");
 
     // agar section param nahi hai to Home active rakho
     if (!sectionId) {
-      setActiveSection("home");
       return;
     }
 
@@ -81,9 +83,9 @@ export default function Navbar() {
     setMenuOpen(false);
 
     if (id === "home") {
-      navigate("/"); // URL clean
+      router.push("/"); // URL clean
     } else {
-      navigate(`/?section=${id}`);
+      router.push(`/?section=${id}`);
     }
 
     const section = document.getElementById(id);
@@ -112,9 +114,12 @@ export default function Navbar() {
             onClick={() => handleNavClick("home")}
             className="flex items-center gap-4 shrink-0"
           >
-            <img
+            <Image
               src="/images/logo.png"
               alt="Khatu Shyam Temple Logo"
+              width={1024}
+              height={1024}
+              sizes="(min-width: 1024px) 80px, (min-width: 768px) 64px, 56px"
               draggable="false"
               className="
                 h-14

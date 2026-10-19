@@ -1,4 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Heart, Sparkles, HandHelping } from "lucide-react";
 
 const cards = [
@@ -35,9 +38,12 @@ export default function Vision() {
             transition={{ duration: .8 }}
             viewport={{ once: true }}
           >
-            <img
+            <Image
               src="/images/vision2.png"
               alt=""
+              width={1536}
+              height={1024}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="rounded-3xl shadow-2xl"
             />
           </motion.div>

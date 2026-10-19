@@ -1,4 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   BadgeCheck,
   ArrowRight,
@@ -41,9 +44,11 @@ export default function MissionSection() {
   className="relative overflow-hidden rounded-3xl shadow-xl h-[650px]"
 >
   {/* Background Image */}
-  <img
+            <Image
     src="/images/corridor.jpeg"
     alt="About Khatu Shyam Temple"
+    fill
+    sizes="(min-width: 1024px) 50vw, 100vw"
     className="absolute inset-0 w-full h-full object-cover"
   />
 
@@ -164,9 +169,12 @@ export default function MissionSection() {
               "
             >
 
-              <img
+            <Image
                 src="/images/temple-outline.png"
                 alt=""
+                width={1536}
+                height={1024}
+                sizes="192px"
                 className="w-48"
               />
 

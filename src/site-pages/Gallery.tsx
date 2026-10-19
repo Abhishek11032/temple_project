@@ -1,11 +1,12 @@
-import { Link,  useParams } from "react-router-dom";
+import Link from "next/link";
+import { Suspense } from "react";
 import {  ChevronRight } from "lucide-react";
 import { galleryData } from "../data/Gallerydata";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import Image from "next/image";
 
-export default function Gallery() {
-  const { event } = useParams();
+export default function Gallery({ event }: { event?: string }) {
   // const navigate = useNavigate();
 
   const images = event
@@ -21,14 +22,14 @@ export default function Gallery() {
   return (
     <section className="min-h-screen bg-[#FFF8F2] pt-10">
 
-      <Navbar/>
+      <Suspense fallback={null}><Navbar /></Suspense>
       <div className="mx-auto max-w-7xl px-6 py-10">
         {/* Back Button + Breadcrumb */}
 
         <div className="mb-10">
           <div className="flex flex-wrap items-center text-sm">
             <Link
-              to="/"
+              href="/"
               className={`transition duration-300 ${
                 !event
                   ? "text-amber-300 font-semibold"
@@ -41,7 +42,7 @@ export default function Gallery() {
             <ChevronRight size={16} className="mx-2 text-gray-500" />
 
             <Link
-              to="/gallery"
+              href="/gallery"
               className={`transition duration-300 ${
                 !event
                   ? "text-amber-300 font-semibold"
@@ -93,9 +94,12 @@ export default function Gallery() {
     >
       {/* Image */}
       <div className="relative h-80 overflow-hidden">
-        <img
+        <Image
           src={item.image}
           alt={item.title}
+          width={1600}
+          height={1200}
+          sizes="(min-width: 1344px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 640px) calc((100vw - 88px) / 2), calc(100vw - 48px)"
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
 

@@ -1,15 +1,17 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Hero() {
   const [showScrollIcon, setShowScrollIcon] = useState(true);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       setShowScrollIcon(window.scrollY === 0);
     };
 
@@ -25,9 +27,13 @@ export default function Hero() {
     <section id="home" className="relative pt-20 lg:pt-24 overflow-hidden">
       {/* Background Image */}
 
-      <img
+      <Image
         src="/images/Temple.png"
         alt="Temple"
+        width={1537}
+        height={1023}
+        sizes="100vw"
+        preload
         className="
           w-full
           h-[70vh]
@@ -122,7 +128,7 @@ export default function Hero() {
             className="mt-8 sm:mt-10 md:mt-12"
           >
             <button
-              onClick={() => navigate("/home/journey")}
+              onClick={() => router.push("/home/journey")}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition"
             >
               Explore Journey

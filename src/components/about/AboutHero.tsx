@@ -1,15 +1,20 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutHero() {
   return (
     <section className="relative h-[60vh] sm:h-[65vh] md:h-[75vh] overflow-hidden">
       {/* Background Image */}
 
-      <img
+      <Image
         src="/images/about-hero.jpeg"
         alt="About Khatu Shyam Temple"
+        fill
+        sizes="100vw"
         className="absolute inset-0 h-full w-full object-cover"
       />
 
@@ -21,7 +26,7 @@ export default function AboutHero() {
 
       <div className="absolute top-5 right-5 md:top-8 md:right-12 flex items-center gap-2 text-xs sm:text-sm text-white">
         <Link
-  to="/?section=home"
+  href="/?section=home"
   className="inline-flex items-center px-2 py-1 transition-colors duration-300 hover:text-amber-300"
 >
   Home
