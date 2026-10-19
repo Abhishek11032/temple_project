@@ -15,6 +15,7 @@ export default function AboutHero() {
         alt="About Khatu Shyam Temple"
         fill
         sizes="100vw"
+        data-loader-required="true"
         className="absolute inset-0 h-full w-full object-cover"
       />
 

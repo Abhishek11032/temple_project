@@ -23,6 +23,7 @@ export default function Loader({ loading }: LoaderProps) {
             loading="eager"
             className="loader-logo"
             alt="Temple Logo"
+            data-loader-required="true"
           />
         </div>
         <p className="loader-title">Shri Khatu Shyam Ji</p>

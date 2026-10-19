@@ -5,6 +5,9 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 import Loader from "../common/Loader";
 import { useLoader } from "../../context/LoaderContext";
+import { watchRequiredImages } from "../../lib/loaderImages";
+
+const MINIMUM_LOADER_DURATION_MS = 2000;
 
 export default function PageLoader() {
   const {
@@ -35,12 +38,33 @@ export default function PageLoader() {
     // Actual route change
     previousPath.current = currentPath;
 
-    // The destination route is already rendered at this point. Keep the
-    // transition indicator brief, then let its CSS fade-out finish.
+    // Destination content is committed before this effect runs, so only
+    // explicitly marked initial-screen images are included in this wait.
     showLoader();
-    const frame = requestAnimationFrame(hideLoader);
+    let minimumDurationElapsed = false;
+    let requiredImagesSettled = false;
+    let active = true;
 
-    return () => cancelAnimationFrame(frame);
+    const tryHideLoader = () => {
+      if (active && minimumDurationElapsed && requiredImagesSettled) {
+        hideLoader();
+      }
+    };
+
+    const timer = window.setTimeout(() => {
+      minimumDurationElapsed = true;
+      tryHideLoader();
+    }, MINIMUM_LOADER_DURATION_MS);
+    const stopWatchingImages = watchRequiredImages(() => {
+      requiredImagesSettled = true;
+      tryHideLoader();
+    });
+
+    return () => {
+      active = false;
+      window.clearTimeout(timer);
+      stopWatchingImages();
+    };
   }, [
     pathname,
     search,

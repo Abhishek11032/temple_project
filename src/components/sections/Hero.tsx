@@ -34,6 +34,7 @@ export default function Hero() {
         height={1023}
         sizes="100vw"
         preload
+        data-loader-required="true"
         className="
           w-full
           h-[70vh]

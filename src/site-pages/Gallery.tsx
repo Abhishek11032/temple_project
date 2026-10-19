@@ -100,6 +100,7 @@ export default function Gallery({ event }: { event?: string }) {
           width={1600}
           height={1200}
           sizes="(min-width: 1344px) 384px, (min-width: 1024px) calc((100vw - 128px) / 3), (min-width: 640px) calc((100vw - 88px) / 2), calc(100vw - 48px)"
+          data-loader-required={index < 3 ? "true" : undefined}
           className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
 

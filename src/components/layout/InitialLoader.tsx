@@ -33,6 +33,7 @@ export default function InitialLoader({
             className="loader-logo"
             alt="Temple Logo"
             loading="eager"
+            data-loader-required="true"
           />
         </div>
         <p className="loader-title">Shri Khatu Shyam Ji</p>
