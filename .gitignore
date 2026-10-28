@@ -12,6 +12,7 @@ node_modules
 out
 dist
 dist-ssr
+*.tsbuildinfo
 *.local
 
 # Local environment files can contain credentials. Keep safe templates tracked.

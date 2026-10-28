@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import App from "../App";
+import SiteHeader from "@/components/temple/SiteHeader";
+import SiteFooter from "@/components/temple/SiteFooter";
+import FloatingActions from "@/components/temple/FloatingActions";
+import LoadingExperience from "@/components/temple/LoadingExperience";
 import "../styles/globals.css";
-import "../styles/initial-loader.css";
 
 export const metadata: Metadata = {
   title: "Shri Khatu Shyam Ji Temple",
@@ -23,8 +25,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body>
-        <App>{children}</App>
+      <body className="bg-temple-ivory font-sans text-temple-ink antialiased">
+        <LoadingExperience>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <FloatingActions />
+        </LoadingExperience>
       </body>
     </html>
   );
