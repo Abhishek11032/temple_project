@@ -1,6 +1,6 @@
-﻿import Home from "../site-pages/Home";
+import HomePage from "@/components/temple/HomePage";
+import RouteReadyMarker from "@/components/temple/RouteReadyMarker";
 
 export default function Page() {
-  return <Home />;
+  return <><RouteReadyMarker /><HomePage /></>;
 }
-
